@@ -1,0 +1,60 @@
+/** { outline: 2px dotted red }*/
+
+body {
+  line-height: 1.7;
+  color: gray;
+  font-weight: 300;
+  font-size: 1rem;
+  font-family: "Roboto"
+}
+
+p {
+    color: gray;
+}
+
+.header {
+    text-align: center;
+}
+
+
+.header a {
+    color: #00909e;
+}
+
+.header form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header form input {
+    width: 200px;
+    height: 20px;
+}
+
+.header form button {
+    width: 100px;
+    height: 20px;
+}
+
+.main {
+    width: 100%;
+    /*border: 1px solid black;*/
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+
+.book {
+    width: 300px;
+    height: 380px;
+    float:left; /* add this */
+/*    border: 1px solid red;*/
+    text-align: center;
+}
+
+.book img {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 278px;
+}

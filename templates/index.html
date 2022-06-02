@@ -1,0 +1,39 @@
+<!-- ./templates/index.html -->
+    <html>
+    <head>
+      <!-- link to the Todo MVC index.css file -->
+
+<!--       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+
+      <link rel="stylesheet" href="../static/index.css">
+      <title>Book Search</title>
+    </head>
+
+    <body>
+        <div class="header">
+          <h1 class="title"><a href="/">Search a Book</a></h1>
+          <form action="{{ url_for('search_book') }}" method="get">
+            <input type="text" name="search_field">
+            <button id='submit' type="submit">Submit</button>
+          </form>
+          <p>Explore similar books to the ones you like</p><br/>
+        </div>
+
+        <div class="main">
+          {% for book in books %} 
+          <div id="{{ book['isbn'] }}" class="book">
+            <a href='https://www.goodreads.com/book/show/{{ book["goodreads_book_id"] }}'>
+              <img id='book_image' src="{{ book['image_url'] }}"/>
+            </a>
+            {{ book['title'] }}<br/>
+            <a href="{{ url_for('book_recommendations', id_goodreads=book['goodreads_book_id']) }}">Find Similar Books</a>
+          </div>
+          {% endfor %}
+        </div>
+
+    <script src="../static/index.js"></script>
+    </body>
+    </html>
